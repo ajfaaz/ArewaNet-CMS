@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from apps.website.models import Page
+from apps.pages.models import Page
 
 
 def page_detail(request, slug):

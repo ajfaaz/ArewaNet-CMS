@@ -1,4 +1,4 @@
-from apps.website.models import Page
+from apps.pages.models import Page
 
 
 def get_published_pages():
