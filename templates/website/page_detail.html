@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <h1>{{ page.title }}</h1>
+
+    {% if page.featured_image %}
+        <img
+            src="{{ page.featured_image.url }}"
+            class="img-fluid mb-4">
+    {% endif %}
+
+    <div>
+        {{ page.content|linebreaks }}
+    </div>
+
+</section>
+
+{% endblock %}

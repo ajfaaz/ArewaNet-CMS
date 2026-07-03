@@ -1,0 +1,58 @@
+{% if homepage_about %}
+<section class="section bg-light">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+{% if homepage_about.image %}
+<img src="{{ homepage_about.image.url }}"
+class="img-fluid rounded-4 shadow">
+{% endif %}
+
+</div>
+
+<div class="col-lg-6">
+
+<h6 class="text-success">
+
+ABOUT US
+
+</h6>
+
+<h2>
+
+{{ homepage_about.title }}
+
+</h2>
+
+<p class="lead">
+
+{{ homepage_about.subtitle }}
+
+</p>
+
+<p>
+
+{{ homepage_about.content|linebreaks }}
+
+</p>
+
+<a href="{{ homepage_about.button_url }}"
+
+class="btn btn-success">
+
+{{ homepage_about.button_text }}
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+{% endif %}

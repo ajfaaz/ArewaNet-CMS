@@ -1,0 +1,52 @@
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            {% if website.logo %}
+                <img src="{{ website.logo.url }}" height="60" alt="{{ website.organization_name }}">
+            {% else %}
+                <strong>{{ website.short_name|default:"IASON" }}</strong>
+            {% endif %}
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav mx-auto">
+                {% for item in header_menu %}
+                    {% if item.children.all %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" 
+                               href="{{ item.url }}" 
+                               role="button" 
+                               data-bs-toggle="dropdown" 
+                               aria-expanded="false">
+                                {{ item.title }}
+                            </a>
+                            <ul class="dropdown-menu">
+                                {% for child in item.children.all %}
+                                    <li>
+                                        <a class="dropdown-item" href="{{ child.url }}">
+                                            {{ child.title }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ item.url }}">
+                                {{ item.title }}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <a href="/donate/" class="btn btn-primary rounded-pill px-4">
+                <i class="fa-solid fa-heart me-1"></i> Donate Now
+            </a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,43 @@
+<div class="top-bar py-2">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <small class="d-flex flex-wrap gap-3">
+                    {% if website.phone %}
+                    <span>
+                        <i class="fa-solid fa-phone me-1"></i>
+                        {{ website.phone }}
+                    </span>
+                    {% endif %}
+                    
+                    {% if website.email %}
+                    <span>
+                        <i class="fa-solid fa-envelope me-1"></i>
+                        {{ website.email }}
+                    </span>
+                    {% endif %}
+                </small>
+            </div>
+            
+            <div class="col-lg-6 text-end social-links">
+                {% if website.facebook %}
+                <a href="{{ website.facebook }}" target="_blank" class="ms-3">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                {% endif %}
+
+                {% if website.instagram %}
+                <a href="{{ website.instagram }}" target="_blank" class="ms-3">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                {% endif %}
+
+                {% if website.tiktok %}
+                <a href="{{ website.tiktok }}" target="_blank" class="ms-3">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

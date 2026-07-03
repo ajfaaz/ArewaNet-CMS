@@ -1,0 +1,63 @@
+<section class="hero">
+
+<div id="heroSlider"
+
+class="carousel slide carousel-fade"
+
+data-bs-ride="carousel">
+
+<div class="carousel-inner">
+
+{% for slide in hero_slides %}
+
+<div class="carousel-item {% if forloop.first %}active{% endif %}">
+
+<img src="{{ slide.background_image.url }}"
+
+class="d-block w-100 hero-image">
+
+<div class="hero-overlay">
+
+<div class="container">
+
+<div class="hero-content">
+
+<h1>{{ slide.title }}</h1>
+
+<p>{{ slide.subtitle }}</p>
+
+<a href="{{ slide.button_one_url }}"
+
+class="btn btn-success">
+
+{{ slide.button_one_text }}
+
+</a>
+
+{% if slide.button_two_text %}
+
+<a href="{{ slide.button_two_url }}"
+
+class="btn btn-light">
+
+{{ slide.button_two_text }}
+
+</a>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
