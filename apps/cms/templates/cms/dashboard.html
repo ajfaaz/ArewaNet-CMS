@@ -1,0 +1,22 @@
+{% extends "cms/layout.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="dashboard-header mb-4">
+        <h1>Dashboard</h1>
+        <p class="welcome-text">Welcome to Iason CMS</p>
+    </div>
+
+    <div class="dashboard-widgets-row">
+        {% for widget in widgets %}
+            <div class="widget-col">
+                {{ widget.title }}
+            </div>
+        {% empty %}
+            <div class="no-widgets-alert">
+                No dashboard widgets registered.
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

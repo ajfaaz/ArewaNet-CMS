@@ -1,0 +1,63 @@
+<aside class="cms-sidebar">
+
+    <div class="sidebar-logo">
+
+        <h2>Iason CMS</h2>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <ul>
+
+            <li>
+                <a href="{% url 'cms_dashboard' %}">
+                    Dashboard
+                </a>
+            </li>
+
+        </ul>
+
+        {% for category, modules in cms_sidebar.items %}
+
+            <div class="sidebar-category">
+
+                {{ category }}
+
+            </div>
+
+            <ul>
+
+                {% for module in modules %}
+
+                    <li>
+
+                        {% if module.url %}
+                            <a href="{{ module.url }}">
+                        {% else %}
+                            <span>
+                        {% endif %}
+
+                            {% if module.icon %}
+                                <span>{{ module.icon }}</span>
+                            {% endif %}
+
+                            {{ module.title }}
+
+                        {% if module.url %}
+                            </a>
+                        {% else %}
+                            </span>
+                        {% endif %}
+
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+
+        {% endfor %}
+
+    </nav>
+
+</aside>

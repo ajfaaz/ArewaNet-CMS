@@ -1,0 +1,61 @@
+<section class="hero-section hero-{{ component.hero_height }}"
+style="
+background-image:url('{% if component.image %}{{ component.image.url }}{% endif %}');
+">
+
+    <div class="hero-overlay"
+        style="background: {{ component.overlay_color }};">
+    </div>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-8
+                        {% if component.text_alignment == 'center' %}
+                        mx-auto text-center
+                        {% elif component.text_alignment == 'right' %}
+                        ms-auto text-end
+                        {% endif %}">
+
+                {% if component.heading %}
+                <h1 class="hero-title">
+                    {{ component.heading }}
+                </h1>
+                {% endif %}
+
+                {% if component.subheading %}
+                <p class="hero-subtitle">
+                    {{ component.subheading }}
+                </p>
+                {% endif %}
+
+                <div class="hero-buttons">
+
+                    {% if component.button_text %}
+                    <a href="{{ component.button_url }}"
+                       class="btn btn-primary btn-lg">
+
+                        {{ component.button_text }}
+
+                    </a>
+                    {% endif %}
+
+                    {% if component.secondary_button_text %}
+                    <a href="{{ component.secondary_button_url }}"
+                       class="btn btn-outline-light btn-lg">
+
+                        {{ component.secondary_button_text }}
+
+                    </a>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

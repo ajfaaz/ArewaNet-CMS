@@ -1,0 +1,21 @@
+{% for category, modules in cms_sidebar.items %}
+
+<div class="sidebar-category">
+    {{ category }}
+</div>
+
+{% for module in modules %}
+
+<a href="{{ module.url }}"{% if module.description %} title="{{ module.description }}"{% endif %} class="d-flex justify-content-between align-items-center">
+    <span>
+        <i class="{{ module.icon }} me-2"></i>
+        {{ module.title }}
+    </span>
+    {% if module.badge is not None %}
+    <span class="badge bg-secondary rounded-pill">{{ module.badge }}</span>
+    {% endif %}
+</a>
+
+{% endfor %}
+
+{% endfor %}

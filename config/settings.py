@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # Third Party Apps
     "django_ckeditor_5",
+    "django_extensions",
     # Local Apps
     "apps.core",
     "apps.accounts",
@@ -58,9 +59,10 @@ INSTALLED_APPS = [
     "apps.testimonials",
     "apps.partners",
     "apps.dashboard",
-    "apps.cms",
     "apps.website",
     "apps.pages.apps.PagesConfig",
+    "apps.content.apps.ContentConfig",
+    "apps.cms.apps.CMSConfig",
 ]
 
 MIDDLEWARE = [
@@ -89,6 +91,7 @@ TEMPLATES = [
                 # ArewaNet CMS
                 "apps.core.context_processors.website_settings",
                 "apps.website.context_processors.menu_context",
+                "apps.cms.context_processors.navigation.cms_navigation",
             ],
         },
     },

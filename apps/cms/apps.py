@@ -1,7 +1,12 @@
 from django.apps import AppConfig
 
 
-class CmsConfig(AppConfig):
+class CMSConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     name = "apps.cms"
-    verbose_name = "CMS Engine"
+
+    def ready(self):
+
+        from .registry.discovery import discover_modules
+
+        discover_modules()

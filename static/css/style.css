@@ -226,3 +226,125 @@ a {
     color: var(--primary);
 
 }
+
+/* ===========================
+   HERO COMPONENT
+=========================== */
+
+.hero-section {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+
+}
+
+.hero-small {
+
+    min-height: 350px;
+
+}
+
+.hero-medium {
+
+    min-height: 500px;
+
+}
+
+.hero-large {
+
+    min-height: 700px;
+
+}
+
+.hero-fullscreen {
+
+    min-height: 100vh;
+
+}
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+}
+
+.hero-section .container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.hero-title {
+
+    color: #fff;
+
+    font-family: Poppins;
+
+    font-size: 56px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+}
+
+.hero-subtitle {
+
+    color: #fff;
+
+    font-size: 20px;
+
+    margin-top: 20px;
+
+    margin-bottom: 35px;
+
+    opacity: .95;
+
+}
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+.hero-buttons .btn {
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+}
+
+.text-center .hero-buttons {
+
+    justify-content: center;
+
+}
+
+.text-end .hero-buttons {
+
+    justify-content: end;
+
+}
