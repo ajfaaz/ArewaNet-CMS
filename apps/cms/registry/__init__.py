@@ -15,3 +15,7 @@ def register_module(**kwargs):
 
 def register_widget(**kwargs):
     widgets.register(CMSWidget(**kwargs))
+
+
+
+
