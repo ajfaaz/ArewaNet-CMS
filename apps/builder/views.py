@@ -1,11 +1,15 @@
-from django.shortcuts import get_object_or_404
-from django.shortcuts import render
-
+from django.shortcuts import get_object_or_404, render
 from apps.pages.models import Page
 
 
-def page_builder(request, pk):
+def dashboard(request):
+    return render(
+        request,
+        "builder/dashboard.html",
+    )
 
+
+def page_builder(request, pk):
     page = get_object_or_404(
         Page,
         pk=pk,

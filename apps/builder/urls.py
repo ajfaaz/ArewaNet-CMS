@@ -1,11 +1,9 @@
 from django.urls import path
+from . import views
 
-from .views import page_builder
+app_name = "builder"
 
 urlpatterns = [
-    path(
-        "page/<int:pk>/",
-        page_builder,
-        name="page_builder",
-    ),
+    path("", views.dashboard, name="dashboard"),
+    path("page/<int:pk>/", views.page_builder, name="page_builder"),
 ]

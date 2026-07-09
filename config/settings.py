@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     "apps.pages.apps.PagesConfig",
     "apps.content.apps.ContentConfig",
     "apps.cms.apps.CMSConfig",
+    "apps.builder.apps.BuilderConfig",
 ]
 
 MIDDLEWARE = [
