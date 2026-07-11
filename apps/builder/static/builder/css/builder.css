@@ -1,0 +1,89 @@
+.builder-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.builder-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.builder-workspace {
+    display: grid;
+    grid-template-columns: 260px 1fr 320px;
+    min-height: 80vh;
+}
+
+.builder-sidebar {
+    border-right: 1px solid #ddd;
+    padding: 20px;
+}
+
+.builder-canvas {
+    padding: 30px;
+    background: #f7f7f7;
+}
+
+.builder-inspector,
+.builder-properties {
+    border-left: 1px solid #ddd;
+    padding: 20px;
+}
+
+.canvas-placeholder {
+    background: white;
+    min-height: 700px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+}
+
+.builder-block {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.builder-block-header {
+    padding: 12px 16px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    font-weight: 600;
+}
+
+.builder-block-body {
+    padding: 24px;
+}
+
+
+.builder-component {
+
+    border: 2px solid transparent;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    margin-bottom: 16px;
+
+}
+
+.builder-component:hover {
+
+    border-color: #d1d5db;
+
+}
+
+.builder-component.selected {
+
+    border-color: #0d6efd;
+
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, .15);
+
+}

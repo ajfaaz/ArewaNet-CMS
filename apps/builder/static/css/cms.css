@@ -1,0 +1,48 @@
+body{
+    margin:0;
+    background:#f4f6f9;
+    font-family:Arial,sans-serif;
+}
+
+.cms-wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+.cms-sidebar{
+    width:260px;
+    background:#1d3557;
+    color:white;
+    padding:20px;
+}
+
+.cms-sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border-radius:6px;
+}
+
+.cms-sidebar a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.cms-main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+.cms-header{
+    background:white;
+    border-bottom:1px solid #ddd;
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cms-content{
+    padding:30px;
+}

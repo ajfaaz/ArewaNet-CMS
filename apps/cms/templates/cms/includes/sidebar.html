@@ -2,61 +2,59 @@
 
     <div class="sidebar-logo">
 
-        <h2>Iason CMS</h2>
+        <h3>Iason CMS</h3>
 
     </div>
 
-    <nav class="sidebar-nav">
+    <nav>
 
-        <ul>
+        <ul class="list-unstyled">
 
             <li>
+
                 <a href="{% url 'cms_dashboard' %}">
+
+                    <i class="bi bi-speedometer2"></i>
+
                     Dashboard
+
                 </a>
+
             </li>
 
-        </ul>
+            {% for category, modules in cms_sidebar.items %}
 
-        {% for category, modules in cms_sidebar.items %}
+                <li class="mt-4 text-uppercase text-secondary small">
 
-            <div class="sidebar-category">
+                    {{ category }}
 
-                {{ category }}
-
-            </div>
-
-            <ul>
+                </li>
 
                 {% for module in modules %}
 
-                    <li>
+                    {% if module.url %}
 
-                        {% if module.url %}
+                        <li>
+
                             <a href="{{ module.url }}">
-                        {% else %}
-                            <span>
-                        {% endif %}
 
-                            {% if module.icon %}
-                                <span>{{ module.icon }}</span>
-                            {% endif %}
+                                {% if module.icon %}
+                                    <i class="{{ module.icon }}"></i>
+                                {% endif %}
 
-                            {{ module.title }}
+                                {{ module.title }}
 
-                        {% if module.url %}
                             </a>
-                        {% else %}
-                            </span>
-                        {% endif %}
 
-                    </li>
+                        </li>
+
+                    {% endif %}
 
                 {% endfor %}
 
-            </ul>
+            {% endfor %}
 
-        {% endfor %}
+        </ul>
 
     </nav>
 

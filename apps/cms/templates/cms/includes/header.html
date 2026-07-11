@@ -1,5 +1,25 @@
 <header class="cms-header">
 
-    Header
+    <div>
+
+        <h3 class="mb-0">
+
+            {% block page_title %}
+                Dashboard
+            {% endblock %}
+
+        </h3>
+
+    </div>
+
+    <div>
+
+        <span class="text-muted">
+
+            {{ request.user }}
+
+        </span>
+
+    </div>
 
 </header>

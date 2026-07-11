@@ -1,27 +1,29 @@
-{% extends "base.html" %}
+{% extends "cms/base.html" %}
+{% load static %}
+{% block title %}
+Visual Builder
+{% endblock %}
 
 {% block content %}
 
-<div class="builder-layout">
+<div class="builder-container">
 
-    <aside class="builder-sidebar">
+    {% include "builder/partials/toolbar.html" %}
 
-        Components
+    <div class="builder-workspace">
 
-    </aside>
+        {% include "builder/partials/sidebar.html" %}
 
-    <main class="builder-preview">
+        {% include "builder/partials/canvas.html" %}
 
-        Website Preview
+        {% include "builder/partials/inspector.html" %}
 
-    </main>
-
-    <aside class="builder-properties">
-
-        Properties
-
-    </aside>
+    </div>
 
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'builder/js/builder.js' %}"></script>
 {% endblock %}

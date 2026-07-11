@@ -1,0 +1,42 @@
+<div class="builder-canvas">
+
+    {% for component in components %}
+
+        <div
+            id="component-{{ component.id }}"
+            class="builder-component"
+            data-component-id="{{ component.id }}"
+            data-component-type="{{ component.component_type }}"
+        >
+
+            <div class="builder-block-header">
+
+                <strong>
+                    {{ component.component_type }}
+                </strong>
+
+            </div>
+
+            <div class="builder-block-body">
+
+                {{ component.preview|safe }}
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <div class="canvas-placeholder">
+
+            <h3>No components</h3>
+
+            <p>
+                This page is empty.
+            </p>
+
+        </div>
+
+    {% endfor %}
+
+</div>

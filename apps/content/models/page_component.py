@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.html import escape, format_html
+from django.utils.safestring import mark_safe
 
 from apps.core.models.base import OrderedModel
 from apps.pages.models import Page
@@ -194,3 +196,41 @@ class PageComponent(OrderedModel):
         """
 
         self.configuration.pop(key, None)
+
+    @property
+    def preview(self):
+        if self.component_type == "hero":
+            heading = escape(self.heading or "Hero Preview")
+            subheading = escape(self.subheading or "Building something great")
+            button_text = escape(self.button_text or "Learn More")
+            button_url = escape(self.button_url or "#")
+
+            return mark_safe(
+                format_html(
+                    """
+                    <div class="hero-preview">
+                        <h2 class="hero-heading">{}</h2>
+                        <p class="hero-subheading">{}</p>
+                        <a class="hero-button" href="{}">{}</a>
+                    </div>
+                    """,
+                    heading,
+                    subheading,
+                    button_url,
+                    button_text,
+                )
+            )
+
+        title = self.heading or f"{self.get_component_type_display()} Preview"
+        subtitle = self.subheading or ""
+        body = self.body or ""
+
+        parts = [format_html("<h3>{}</h3>", escape(title))]
+
+        if subtitle:
+            parts.append(format_html("<p>{}</p>", escape(subtitle)))
+
+        if body:
+            parts.append(format_html("<div>{}</div>", escape(body[:160])))
+
+        return mark_safe("".join(str(part) for part in parts))
